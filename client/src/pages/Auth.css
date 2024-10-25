@@ -1,0 +1,92 @@
+.reg-log-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login CSS  */
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+.login-title{
+    margin-bottom: 15px;
+}
+.login-username{
+    margin-bottom: 15px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+.login-password{
+    margin-bottom: 15px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+.login-submit-button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: #D4BEE4;
+    transition: 0.4s;
+}
+.login-submit-button:hover{
+    background-color: #7f56ad;
+    color: white;
+}
+.login-username::placeholder{
+    padding: 5px;
+}
+.login-password::placeholder{
+    padding: 5px;
+}
+
+
+/*Reg CSS*/
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+.reg-title{
+    margin-bottom: 15px;
+}
+.reg-username{
+    margin-bottom: 15px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+.reg-password{
+    margin-bottom: 15px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+.reg-username::placeholder{
+    padding: 5px;
+}
+.reg-password::placeholder{
+    padding: 5px;
+}
+.reg-submit-button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: #D4BEE4;
+    transition: 0.4s;
+}
+.reg-submit-button:hover{
+    background-color: #7f56ad;
+    color: white;
+}
+
