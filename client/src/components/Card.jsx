@@ -13,6 +13,7 @@ function Card(props) {
     <div className='main-card-wrapper'>
         <div className='card'>
             <img src={props.img} alt='idk' className='card-image' height={260} width={260} />
+            
             <p>{props.name}</p>
             <a href='/'>{props.url}</a>
             <p>{props.price}</p>

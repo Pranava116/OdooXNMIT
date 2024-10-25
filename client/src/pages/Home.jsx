@@ -31,11 +31,11 @@ function Home() {
   return (
     <div className='home-wrapper'>
       <div className='navbar-wrapper'>
-        <h1 className='logo'>Subs</h1>
+        <h1 className='logo'>*****</h1>
         <div className='button-div'>
         {!cookies.access_token ? (<></>) : (<button className='create-sub'><Link className='create-sub-link' to="/create">Add Subscription</Link></button>)}
 
-        {!cookies.access_token ? (<button className='login-btn'><Link className="login-link" to={"/auth"}>Login/Register</Link></button>) : (<button className='logout-btn' onClick={logout}>Logout</button>)}
+        {!cookies.access_token ? (<button className='login-btn'><Link className="login-link" to={"/auth"}> Login / Register </Link></button>) : (<button className='logout-btn' onClick={logout}>Logout</button>)}
         </div>
       </div>
         <div className='card-wrapper'>
@@ -44,6 +44,8 @@ function Home() {
           <Card name = {name} img = {img} url = {url} price ={price} _id = {_id}/>
           )
         })}
+        {!cookies.access_token ? (<p className='unauth-msg'>Login / Register to Add Cards</p>) : (<></>)}
+
         </div>
     </div>
   )

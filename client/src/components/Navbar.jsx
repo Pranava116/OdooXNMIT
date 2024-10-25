@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div className='main-navbar-wrapper'>
       <div className='navbar-wrapper'>
-        <h1 className='logo'>Subs</h1>
+        <h1 className='logo'>*****</h1>
 
       </div>
     </div>
