@@ -10,7 +10,7 @@ function Home() {
   const [cards, setCards] = useState([])
   const [cookies,setCookies] = useCookies(["access_token"])
   const navigate = useNavigate()
-   function logout(){
+   function logout(){ 
     setCookies("access_token", "")
     window.localStorage.removeItem("UserID")
     window.location.reload()
@@ -38,6 +38,7 @@ function Home() {
         <div className='button-div'>
         {!cookies.access_token ? (<></>) : (<button className='create-sub'><Link className='create-sub-link' to="/create">Add Subscription</Link></button>)}
         {!cookies.access_token ? (<></>): (<button className='my-listings'><Link className='my-listing' to="/listing">My Listings</Link></button>)}
+        {!cookies.access_token ? (<></>): (<button><Link to="/cart" >Cart</Link></button>)}
         {!cookies.access_token ? (<button className='login-btn'><Link className="login-link" to={"/auth"}> Login / Register </Link></button>) : (<button className='logout-btn' onClick={logout}>Logout</button>)}
         </div>
       </div>

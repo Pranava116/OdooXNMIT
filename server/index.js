@@ -1,25 +1,28 @@
 import express from 'express';
-import 'dotenv/config'
+import 'dotenv/config';
 import mongoose from 'mongoose';
 import { UserRouter } from './routes/auth.js';
-import bcrypt from 'bcrypt';
-import cors from 'cors'
+import cors from 'cors';
 import { CreateRouter } from './routes/create.js';
 import { HomeRouter } from './routes/home.js';
-
 import { ListingRouter } from './routes/listing.js';
+
 const app = express();
 const PORT = process.env.PORT;
 const mongo_uri = process.env.MONGO_URI;
-app.use(cors())
-app.use(express.json())
-app.use("/auth", UserRouter)
-app.use("/create", CreateRouter)
-app.use("/", HomeRouter)
-app.use("/listing", ListingRouter)
 
+app.use(cors());
+app.use(express.json());
 
-app.listen(PORT, (req, res) => {
-    mongoose.connect(mongo_uri).then("connected to db")
-    console.log("Server running in port", PORT)
-})
+app.use("/auth", UserRouter);
+app.use("/create", CreateRouter);
+app.use("/", HomeRouter);
+app.use("/listing", ListingRouter);
+
+app.listen(PORT, () => {
+  mongoose.connect(mongo_uri)
+    .then(() => console.log(" Connected to MongoDB"))
+    .catch(err => console.error(" MongoDB connection error:", err));
+
+  console.log(" Server running on port", PORT);
+});

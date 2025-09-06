@@ -1,92 +1,154 @@
-.reg-log-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Auth.css - Eco-friendly theme */
+
+:root {
+  --primary-color: #4CAF50; /* Green */
+  --secondary-color: #8BC34A; /* Light green */
+  --bg-color: #F0F8F5; /* Soft off-white */
+  --form-bg: #FFFFFF;
+  --text-color: #333;
+  --button-hover: #45a049;
 }
 
-/* Login CSS  */
-
-.login-form{
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    margin-bottom: 50px;
-    margin-top: 40px;
-}
-.login-title{
-    margin-bottom: 15px;
-}
-.login-username{
-    margin-bottom: 15px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid grey;
-}
-.login-password{
-    margin-bottom: 15px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid grey;
-}
-.login-submit-button{
-    width: 100px;
-    height: 30px;
-    border: none;
-    border-radius: 15px;
-    background-color: #D4BEE4;
-    transition: 0.4s;
-}
-.login-submit-button:hover{
-    background-color: #7f56ad;
-    color: white;
-}
-.login-username::placeholder{
-    padding: 5px;
-}
-.login-password::placeholder{
-    padding: 5px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
-
-/*Reg CSS*/
-
-.register-form{
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-}
-.reg-title{
-    margin-bottom: 15px;
-}
-.reg-username{
-    margin-bottom: 15px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid grey;
-}
-.reg-password{
-    margin-bottom: 15px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid grey;
-}
-.reg-username::placeholder{
-    padding: 5px;
-}
-.reg-password::placeholder{
-    padding: 5px;
-}
-.reg-submit-button{
-    width: 100px;
-    height: 30px;
-    border: none;
-    border-radius: 15px;
-    background-color: #D4BEE4;
-    transition: 0.4s;
-}
-.reg-submit-button:hover{
-    background-color: #7f56ad;
-    color: white;
+/* Wrapper for single form box */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
 }
 
+/* Logo styling */
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.auth-logo-icon {
+  width: 35px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.auth-logo:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Form box */
+.form-wrapper {
+  background-color: var(--form-bg);
+  padding: 35px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 320px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form title */
+.auth-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Input fields */
+.auth-input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Buttons */
+.auth-button {
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.auth-button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* Switch link */
+.switch-link {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+}
+
+.link-text {
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .form-wrapper {
+    width: 90%;
+  }
+  .auth-logo {
+    font-size: 1.4rem;
+  }
+  .auth-logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
