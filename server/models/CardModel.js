@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const CardModel = new Schema({
     img: String,
-    title: String,
+    name: String,
     cat: String,
     desc: String,
     quantity: Number,

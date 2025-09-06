@@ -1,6 +1,7 @@
 import React from 'react'
 import '../components/Card.css'
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 function Card(props) {
   async function DeleteCard(e){
     console.log(e.target.id)
@@ -15,9 +16,8 @@ function Card(props) {
             <img src={props.img} alt='idk' className='card-image' height={260} width={260} />
             
             <p>{props.name}</p>
-            <a href='/'>{props.url}</a>
             <p>{props.price}</p>
-            <button className='delete' id = {props._id} onClick={DeleteCard}>Delete</button>
+            <Link to={`/details/${props._id}`}>Details</Link>
         </div>
     </div>
     )
