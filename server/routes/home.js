@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.put("/",  async(req, res) => {
     try {
-        const response = await cardModel.find({userOwner: req.body.UserID})
+        const response = await cardModel.find()
         return res.json(response)
     } catch (error) {
         return res.json(error)

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {useCookies} from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../components/Navbar.jsx'
 function Home() {
   const [cards, setCards] = useState([])
   const [cookies,setCookies] = useCookies(["access_token"])
@@ -19,7 +20,7 @@ function Home() {
    async function GetValue(e){
     const UserID = window.localStorage.getItem("UserID")
    
-    const response =  await axios.put("http://localhost:5000/", {UserID})
+    const response =  await axios.put("http://localhost:5000/", )
     setCards(response.data)
     console.log(response)
   }
@@ -31,10 +32,12 @@ function Home() {
   return (
     <div className='home-wrapper'>
       <div className='navbar-wrapper'>
-        <h1 className='logo'>*****</h1>
+        {/* <div className='new-navbar-wrapper'>
+          <Navbar />
+        </div> */}
         <div className='button-div'>
         {!cookies.access_token ? (<></>) : (<button className='create-sub'><Link className='create-sub-link' to="/create">Add Subscription</Link></button>)}
-
+        {!cookies.access_token ? (<></>): (<button className='my-listings'><Link className='my-listing' to="/listing">My Listings</Link></button>)}
         {!cookies.access_token ? (<button className='login-btn'><Link className="login-link" to={"/auth"}> Login / Register </Link></button>) : (<button className='logout-btn' onClick={logout}>Logout</button>)}
         </div>
       </div>

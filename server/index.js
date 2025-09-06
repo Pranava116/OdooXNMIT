@@ -6,6 +6,8 @@ import bcrypt from 'bcrypt';
 import cors from 'cors'
 import { CreateRouter } from './routes/create.js';
 import { HomeRouter } from './routes/home.js';
+
+import { ListingRouter } from './routes/listing.js';
 const app = express();
 const PORT = process.env.PORT;
 const mongo_uri = process.env.MONGO_URI;
@@ -14,6 +16,7 @@ app.use(express.json())
 app.use("/auth", UserRouter)
 app.use("/create", CreateRouter)
 app.use("/", HomeRouter)
+app.use("/listing", ListingRouter)
 
 
 app.listen(PORT, (req, res) => {

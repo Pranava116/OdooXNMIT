@@ -1,15 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import "./Navbar.css";
 
-function Navbar() {
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className='main-navbar-wrapper'>
-      <div className='navbar-wrapper'>
-        <h1 className='logo'>*****</h1>
+    <nav className="navbar">
+      <div className="nav-container">
+        {/* Logo */}
+        <a href="/" className="nav-logo">
+          MyApp
+        </a>
 
+        {/* Hamburger Button */}
+        <button
+          className="nav-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          ☰
+        </button>
+
+        {/* Links */}
+        <div className={`nav-links ${isOpen ? "active" : ""}`}>
+          <a href="/add" onClick={() => setIsOpen(false)}>Add</a>
+          <a href="/listings" onClick={() => setIsOpen(false)}>My Listings</a>
+          <a href="/about" onClick={() => setIsOpen(false)}>About</a>
+          <a href="/contact" onClick={() => setIsOpen(false)}>Contact</a>
+
+        </div>
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
-
-export default Navbar
